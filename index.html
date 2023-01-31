@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Countries of the World</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- MapBox API links -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+  <!-- Geocoder to load the marker location input-->
+  <script
+    src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+  <link rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css"
+    type="text/css" />
+  <!-- End of MapBox API Links-->
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Countries of the World</title>
 </head>
+
 <body>
-  <script src="./assets/js/script.js"></script>  
+
+  <!-- DIV for interactive map -->
+  <div id="map"></div>
+  <!-- END of DIV for interactive map-->
+
+
+  <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
