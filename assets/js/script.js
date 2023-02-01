@@ -68,9 +68,8 @@ const restUrl = function (countryName) {
 mapboxgl.accessToken = 'pk.eyJ1IjoicGVhY2h5c25pY2tlciIsImEiOiJjbGRrZjBqbnIwOWs0M29xa3VvZGI2dXA2In0.qfH4zvQWMbN6kEIC3d-xhA';
 const map = new mapboxgl.Map({
     container: 'map', // Container ID
-    style: 'mapbox://styles/mapbox/dark-v10', // Map style to use
+    style: 'mapbox://styles/mapbox/light-v10', // Map style to use
     projection: 'globe',
-    zoom: 1, // Starting zoom level
     zoom: 1, // Starting zoom level
     center: [-90, 40]
 });
