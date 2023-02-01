@@ -4,8 +4,29 @@ body {
 }
 
 #map {
-    position: absolute;
-    top: 30%;
-    bottom: 0;
+    height: 600px;
     width: 100%;
+}
+
+aside {
+    height: 300px;
+}
+
+.subheading {
+    padding: 10px; 
+}
+
+#subtitle {
+    margin-bottom: 0px;
+}
+
+#search-aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+
+#past-aside {
+    position: relative;
+    bottom: 300px;
 }

@@ -34,7 +34,7 @@ const map = new mapboxgl.Map({
     container: 'map', // Container ID
     style: 'mapbox://styles/mapbox/dark-v10', // Map style to use
     projection: 'globe',
-    zoom: 0.75, // Starting zoom level
+    zoom: 1, // Starting zoom level
     zoom: 1, // Starting zoom level
     center: [-90, 40]
 });

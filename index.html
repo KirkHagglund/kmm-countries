@@ -17,7 +17,7 @@
 <!-- Building a header section with a title, sub header and little navigation bar to take users to the search and footer sections-->
 
 <body>
-    <header class="navbar is-primary">
+    <header class="navbar banner is-primary">
         <div class="navbar-brand">
             <h1 class="title">Countries of the World</h1>
             <div class="navbar-burger" data-target="navbarExampleTransparentExample">
@@ -65,34 +65,28 @@
     </header>
     <main>
         <!-- Search bar for fetch of country data-->
-        <div class="container">
-            <div class="search-wrapper">
-                <input type="text" id="country-inp" placeholder="Enter a country name here..." />
-                <button id="search-btn">Search</button>
-            </div>
-            <div id="result"></div>
-        </div>
 
         <section class="subtitle" id="subtitle">
-            <h2 class="subtitle has-text-centered">A TL;DR Traveller's Database Right At Your Fingertips!</h2>
+            <h2 class="subheading subtitle has-text-centered">A TL;DR Traveller's Database Right At Your Fingertips!</h2>
         </section>
 
         <section class="columns">
-            <aside class="column is-one-third">
-                Search Section
+            <aside class="column is-one-third" id="search-aside">
+                <input type="text" id="country-inp" placeholder="Enter a country name here..." />
+                <button id="search-btn">Search</button>
             </aside>
             <div class="column is-two-thirds has-text-centered">
-                Search results Section
                 <!-- DIV for interactive map -->
                 <div id="map"></div>
                 <!-- END of DIV for interactive map-->
             </div>
         </section>
-        <section class="columns">
-            <div class="column is-one-third">
+        
+        <!--<section class="columns">-->
+            <div class="column is-one-third" id="past-aside">
                 Past Search Section
             </div>
-        </section>
+        <!--</section>-->
 
     </main>
 
