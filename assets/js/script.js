@@ -82,8 +82,9 @@ map.on('style.load', () => {
 
 // --- Adding Wiki LInk API fetch request --- //
 
-const getWikiLink = (country) => {
-    const wikiUrl = 'https://en.wikipedia.org//w/api.php?action=opensearch&search=' + country + '&limit=1&format=json&origin=*&search=stack&limit=10';
+=======
+const getWikiLink = (country) => {   
+    const wikiUrl = 'https://en.wikipedia.org//w/api.php?action=opensearch&search=' + country + '&limit=1&format=json&origin=*&limit=1';
     fetch(wikiUrl)
         .then(function (response) {
             if (response.ok) {
