@@ -1,9 +1,24 @@
 let searchBtn = document.getElementById("search-btn");
 let countryInp = document.getElementById("country-inp");
 
+
+//Overall function calling all APIs
+
+var submitRequest = function (event) {
+    event.preventDefault();
+    var countryInput = countryInp.value;
+
+    if (countryInput) {
+        getWikiLink(countryInput);
+        restUrl(countryInput);
+    };
+};
+
+
+
 //-----Fetch for Country data ---//
-searchBtn.addEventListener("click", () => {
-    let countryName = countryInp.value;
+
+const restUrl = function(countryName) {
     let finalURL = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
     console.log(finalURL);
     fetch(finalURL)
@@ -21,7 +36,7 @@ searchBtn.addEventListener("click", () => {
             );
 
         })
-});
+};
 
 //--- need to append to the html to become visible ---//
 
@@ -44,3 +59,23 @@ map.on('style.load', () => {
 });
 
 //--- END of GLOBE JAVASCRIPT ---//
+
+// --- Adding Wiki LInk API fetch request --- //
+
+const getWikiLink = (country) => {   
+    const wikiUrl = 'https://en.wikipedia.org//w/api.php?action=opensearch&search=' + country + '&limit=1&format=json&origin=*&search=stack&limit=10';
+    fetch(wikiUrl)
+    .then(function (response) {
+        if (response.ok) {
+            response.json()
+            .then(function (data) {
+                console.log(data);
+            })
+        ;}
+    })
+
+};
+
+// === Event Listener Section ====  //
+
+searchBtn.addEventListener('click', submitRequest);
