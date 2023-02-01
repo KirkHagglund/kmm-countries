@@ -1,11 +1,67 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0 auto;
+  padding: 0;
+  font-family: sans-serif;
+}
+/**styling header**/
+.title {
+  color: white;
+  justify-content: center;
+  margin-top: 2%;
+}
+.navbar-item {
+  color: white;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+.navbar-link {
+  padding-top: 2px;
+}
+/**styling main**/
+main {
+  display: flex;
+  flex-direction: row;
+}
+div h2 {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 50%;
+}
+.article {
+  width: 50%;
+}
+.first-div {
+  border: solid 2px darkblue;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+.first-div h2 {
+  margin-bottom: 2%;
+  margin-top: 8%;
+}
+form input {
+  margin-bottom: 2%;
+}
+.button {
+  background-color: darkblue;
+  color: white;
 }
 
-#map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
+/**styling the footer**/
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 2% 10%;
+  background-color: darkblue;
+  color: white;
 }
