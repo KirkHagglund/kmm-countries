@@ -1,13 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- MapBox API links -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+
+    <!-- End of MapBox API Links-->
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Countries of the World</title>
 </head>
+<!-- Building a header section with a title, sub header and little navigation bar to take users to the search and footer sections-->
+
 <body>
-  <script src="./assets/js/script.js"></script>  
+    <header class="navbar is-primary">
+        <div class="navbar-brand">
+            <h1 class="title">Countries of the World</h1>
+            <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="#">
+                    Home
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="https://bulma.io/documentation/overview/start/">
+                        Resources
+                    </a>
+                    <div class="navbar-dropdown is-boxed">
+                        <a class="navbar-item" href="https://www.mapbox.com/">
+                            mapbox
+                        </a>
+                        <a class="navbar-item" href="https://www.mediawiki.org/wiki/API:Main_page">
+                            Wikipedia APIs
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="field is-grouped">
+                    <p class="control">
+                        <a href="#" class="navbar-item">
+                            <span>Search</span>
+                        </a>
+                    </p>
+                    <p class="control">
+                        <a href="#" class="navbar-item">
+                            <span>About</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Search bar for fetch of country data-->
+        <div class="container">
+            <div class="search-wrapper">
+                <input type="text" id="country-inp" placeholder="Enter a country name here..." />
+                <button id="search-btn">Search</button>
+            </div>
+            <div id="result"></div>
+        </div>
+
+        <section class="subtitle" id="subtitle">
+            <h2 class="subtitle has-text-centered">A TL;DR Traveller's Database Right At Your Fingertips!</h2>
+        </section>
+
+        <section class="columns">
+            <aside class="column is-one-third">
+                Search Section
+            </aside>
+            <div class="column is-two-thirds has-text-centered">
+                Search results Section
+                <!-- DIV for interactive map -->
+                <div id="map"></div>
+                <!-- END of DIV for interactive map-->
+            </div>
+        </section>
+        <section class="columns">
+            <div class="column is-one-third">
+                Past Search Section
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>Footer Section</p>
+        </div>
+    </footer>
+    <script src="./assets/js/script.js"></script>
+
 </body>
+
 </html>
