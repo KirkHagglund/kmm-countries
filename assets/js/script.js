@@ -35,10 +35,12 @@ const map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/dark-v10', // Map style to use
     projection: 'globe',
     zoom: 0.75, // Starting zoom level
+    zoom: 1, // Starting zoom level
     center: [-90, 40]
 });
 
 map.on('style.load', () => {
     map.setFog({}); // Set the default atmosphere style
 });
+
 //--- END of GLOBE JAVASCRIPT ---//
