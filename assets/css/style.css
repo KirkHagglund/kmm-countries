@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 /**styling the header**/
 
 .navbar-item {
@@ -9,10 +10,12 @@ body {
   font-family: sans-serif;
   font-size: 18px;
 }
+
 .title {
   color: white;
   font-family: sans-serif;
 }
+
 /**styling the main**/
 #map {
   height: 600px;
@@ -26,6 +29,7 @@ section h2 {
   margin-top: 2%;
   margin-bottom: 2%;
 }
+
 aside {
   height: 300px;
 }
@@ -43,20 +47,24 @@ aside {
   flex-direction: column;
   justify-content: center;
 }
+
 #country-title {
   font-weight: bold;
   margin-bottom: 2%;
   text-align: center;
 }
+
 #search-btn {
   background-color: darkblue;
   color: white;
   margin-top: 2%;
 }
+
 #past-aside {
   position: relative;
   bottom: 300px;
 }
+
 /**styling the footer**/
 .footer {
   width: 100%;
@@ -64,6 +72,7 @@ aside {
   background-color: darkblue;
   color: white;
 }
+
 .footer-link {
   color: white;
 }
