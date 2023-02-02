@@ -77,7 +77,14 @@
         <h3 class="subtitle" id="country-title">Search for a Country of your Choice!</h3>
         <input type="text" id="country-inp" placeholder="Enter a country name here..." />
         <button id="search-btn">Search</button>
-        <!--temp position for results display *move behind globe-->
+        <div class="modal" id="modal-one">
+          <div class="modal-bg modal-exit"></div>
+          <div class="modal-container">
+            <h3>Please enter a valid country name</h3>
+            <h4>Capitalize that first letter!</h4>
+            <button class="modal-close modal-exit">TRY AGAIN</button> 
+          </div>
+        </div>
       </aside>
       <div class="column is-two-thirds-desktop is-one-third-tablet has-text-centered">
         <div id="result-card">
@@ -113,9 +120,9 @@
     </div>
     <div class="content has-text-centered footer-content">
       <h4>Kirk</h4>
-      <p>Tel:</p>
-      <p>Email:</p>
-      <p>Twitter:</p>
+      <p><a target="_blank" class="footer-link" href="tel:705-868-8604">Tel: 705 868 8604</a></p>
+      <p><a target="_blank" class="footer-link" href="mailto: kirkhagglund@gmail.com">Email: kirkhagglund@gmail.com</a></p>
+      <p><a target="_blank" href="https://twitter.com/hagglundkirk?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @TwitterDev</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
     </div>
   </footer>
   <script src="./assets/js/script.js"></script>

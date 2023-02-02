@@ -2,228 +2,38 @@
 let searchBtn = document.getElementById("search-btn");
 let countryInp = document.getElementById("country-inp");
 let resultDiv = document.querySelector("#result");
-let globeDisplay = document.getElementById("map");
-let resultCard = document.getElementById("result-card");
-let wikiDiv = document.getElementById("wiki-link");
-let homeBtn = document.getElementById("refresh");
-resultCard.hidden = true;
-let localStorageArray = JSON.parse(localStorage.getItem("cities")) || [];
-let pastCard = document.getElementById("past-aside");
-let countryArray = [
-  "Afghanistan",
-  "Albania",
-  "Algeria",
-  "Andorra",
-  "Angola",
-  "Anitgua and Barbuda",
-  "Argentina",
-  "Armenia",
-  "Australia",
-  "Austria",
-  "Azerbaijan",
-  "Bahamas",
-  "Bahrain",
-  "Bangladesh",
-  "Barbados",
-  "Belarus",
-  "Belgium",
-  "Belize",
-  "Benin",
-  "Bhutan",
-  "Bolivia",
-  "Bosnia and Herzegovina",
-  "Botswana",
-  "Brazil",
-  "Brunei",
-  "Bulgaria",
-  "Burkina Faso",
-  "Burundi",
-  "Cote dIvoire",
-  "Cabo Verde",
-  "Cambodia",
-  "Cameroon",
-  "Canada",
-  "Central African Republic",
-  "Chad",
-  "Chile",
-  "China",
-  "Colombia",
-  "Comoros",
-  "Congo",
-  "Costa Rica",
-  "Croatia",
-  "Cuba",
-  "Cyprus",
-  "Czechia",
-  "Democratic Republic of the Congo",
-  "Denmark",
-  "Djibouti",
-  "Dominica",
-  "Dominican Republic",
-  "Ecuador",
-  "Egypt",
-  "El Salvador",
-  "Equatorial Guinea",
-  "Eritrea",
-  "Estonia",
-  "Eswatini",
-  "Ethiopia",
-  "Fiji",
-  "Finland",
-  "France",
-  "Gabon",
-  "Gambia",
-  "Georgia",
-  "Germany",
-  "Ghana",
-  "Greece",
-  "Grenada",
-  "Guatemala",
-  "Guinea",
-  "Guinea-Bissau",
-  "Guyana",
-  "Haiti",
-  "Holy See",
-  "Honduras",
-  "Hungary",
-  "Iceland",
-  "India",
-  "Indonesia",
-  "Iran",
-  "Iraq",
-  "Ireland",
-  "Israel",
-  "Italy",
-  "Jamaica",
-  "Japan",
-  "Jordan",
-  "Kazakhstan",
-  "Kenya",
-  "Kiribati",
-  "Kuwait",
-  "Kyrgyzstan",
-  "Laos",
-  "Latvia",
-  "Lebanon",
-  "Lesotho",
-  "Liberia",
-  "Libya",
-  "Liechtenstein",
-  "Lithuania",
-  "Luxembourg",
-  "Madagascar",
-  "Malawi",
-  "Malaysia",
-  "Maldives",
-  "Mali",
-  "Malta",
-  "Marshall Islands",
-  "Mauritania",
-  "Mauritius",
-  "Mexico",
-  "Micronesia",
-  "Moldova",
-  "Monaco",
-  "Mongolia",
-  "Montenegro",
-  "Morocco",
-  "Mozambique",
-  "Myanmar",
-  "Namibia",
-  "Nauru",
-  "Nepal",
-  "Netherlands",
-  "New Zealand",
-  "Nicaragua",
-  "Niger",
-  "Nigeria",
-  "North Korea",
-  "North Macedonia",
-  "Norway",
-  "Oman",
-  "Pakistan",
-  "Palau",
-  "Palestine State",
-  "Panama",
-  "Papua New Guinea",
-  "Paraguay",
-  "Peru",
-  "Philippines",
-  "Poland",
-  "Portugal",
-  "Qatar",
-  "Romania",
-  "Russia",
-  "Rwanda",
-  "Saint Kitts and Nevis",
-  "Saint Lucia",
-  "Saint Vincent and the Grenadines",
-  "Samoa",
-  "San Marino",
-  "Sao Tome and Principe",
-  "Saudi Arabia",
-  "Senegal",
-  "Serbia",
-  "Seychelles",
-  "Sierra Leone",
-  "Singapore",
-  "Slovakia",
-  "Slovenia",
-  "Solomon Islands",
-  "Somalia",
-  "South Africa",
-  "South Korea",
-  "South Sudan",
-  "Spain",
-  "Sri Lanka",
-  "Sudan",
-  "Suriname",
-  "Sweden",
-  "Switzerland",
-  "Syria",
-  "Tajikistan",
-  "Tanzania",
-  "Thaliand",
-  "Timor-Leste",
-  "Togo",
-  "Tonga",
-  "Trinidad and Tobago",
-  "Tunisia",
-  "TUrkey",
-  "Turkmenistan",
-  "Tuvalu",
-  "Uganda",
-  "Ukraine",
-  "United Arab Emirates",
-  "United Kingdom",
-  "United States of America",
-  "Uruguay",
-  "Uzbekistan",
-  "Vanuata",
-  "Venezuela",
-  "Vietnam",
-  "Yemen",
-  "Zambia",
-  "Zimbabwe",
-];
+
+let globeDisplay = document.getElementById('map');
+let resultCard = document.getElementById('result-card');
+let wikiDiv = document.getElementById('wiki-link');
+let homeBtn = document.getElementById('refresh');
+resultCard.hidden = true
+let localStorageArray = JSON.parse(localStorage.getItem('countries')) || [];
+let pastCard = document.getElementById('past-aside');
+let countryArray = ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Anitgua and Barbuda', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cote dIvoire', 'Cabo Verde', 'Cambodia', 'Cameroon', 'Canada', 'Central African Republic', 'Chad', 'Chile', 'China', 'Colombia', 'Comoros', 'Congo', 'Costa Rica', 'Croatia', 'Cuba', 'Cyprus', 'Czechia', 'Democratic Republic of the Congo', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Eswatini', 'Ethiopia', 'Fiji', 'Finland', 'France', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Greece', 'Grenada', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Holy See', 'Honduras', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Mauritania', 'Mauritius', 'Mexico', 'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'North Korea', 'North Macedonia', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Palestine State', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Qatar', 'Romania', 'Russia', 'Rwanda', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'South Korea', 'South Sudan', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Sweden', 'Switzerland', 'Syria', 'Tajikistan', 'Tanzania', 'Thaliand', 'Timor-Leste', 'Togo', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'TUrkey', 'Turkmenistan', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States of America', 'Uruguay', 'Uzbekistan', 'Vanuata', 'Venezuela', 'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe'];
+let alertModal = document.getElementById('modal-one');
+alertModal.hidden = true;
+
 
 //Overall function calling all APIs
 
 var submitRequest = function (event) {
-  event.preventDefault();
-  var countryInput = countryInp.value;
 
-  if (countryArray.includes(countryInput)) {
-    getWikiLink(countryInput);
-    restUrl(countryInput);
-    resultDiv.textContent = "";
-    wikiDiv.textContent = "";
-    globeDisplay.hidden = true;
-    resultCard.hidden = false;
-  } else {
-    alert("please enter a country name"); //Need to replace alert with a modal window
-  }
-  countryInp.value = "";
+    event.preventDefault();
+    var countryInput = countryInp.value;
+     if (countryArray.includes(countryInput)) {
+        getWikiLink(countryInput);
+        restUrl(countryInput);
+        resultDiv.textContent = "";
+        wikiDiv.textContent = "";
+        globeDisplay.hidden = true;
+        resultCard.hidden = false;
+    }
+    else {
+      
+    };
+    countryInp.value = "";
+
 };
 
 // Recall function for past search buttons
@@ -324,35 +134,40 @@ map.on("style.load", () => {
 
 // --- Adding Wiki LInk API fetch request --- //
 
-const getWikiLink = (countryName) => {
-  const wikiUrl =
-    "https://en.wikipedia.org//w/api.php?action=opensearch&search=" +
-    countryName +
-    "&limit=1&format=json&origin=*";
-  fetch(wikiUrl).then(function (response) {
-    if (response.ok) {
-      response.json().then(function (data) {
-        let wikiLink = document.createElement("a");
-        let wikiDisplay = document.createElement("p");
 
-        wikiLink.href = data[3];
-        wikiLink.setAttribute("target", "blank");
-        wikiDisplay.textContent = "Wikipedia Link";
+const getWikiLink = (countryName) => {   
+    const wikiUrl = 'https://en.wikipedia.org//w/api.php?action=opensearch&search=' + countryName + '&limit=1&format=json&origin=*';
+    fetch(wikiUrl)
+        .then(function (response) {
+            if (response.ok) {
+                response.json()
+                    .then(function (data) {   
+                        let wikiLink = document.createElement('a');
+                        let wikiDisplay = document.createElement('p');
 
-        wikiDiv.appendChild(wikiLink);
-        wikiLink.appendChild(wikiDisplay);
+                        wikiLink.href = data[3];
+                        wikiLink.setAttribute('target', 'blank');
+                        wikiDisplay.textContent = 'Wikipedia Link'
 
-        // Local Storage Section
-        let pastCity = data[0];
-        localStorageArray.push(pastCity);
-        localStorage.setItem("cities", JSON.stringify(localStorageArray));
-        const button = document.createElement("button");
-        button.textContent = data[0];
-        button.setAttribute("class", "search-card");
-        pastCard.appendChild(button);
-      });
-    }
-  });
+                        wikiDiv.appendChild(wikiLink);
+                        wikiLink.appendChild(wikiDisplay);
+
+                        // Local Storage Section
+                        let pastCity = data[0];
+                        if (localStorageArray.length == 5) {
+                            localStorageArray.shift(0);
+                        };
+                        localStorageArray.push(pastCity);
+                        localStorage.setItem('countries', JSON.stringify(localStorageArray));
+                        const button = document.createElement("button");
+                        button.textContent = data[0];
+                        button.setAttribute('class', 'search-card');
+                        getLocalStorage()
+                    });
+            };
+        });
+
+
 };
 
 const recallWikiLink = (country) => {
@@ -416,13 +231,15 @@ const recallRestUrl = function (country) {
 
 // --- Local Storage Section --- //
 
-const getLocalStorage = function () {
-  for (i = 0; i < localStorageArray.length; i++) {
-    const button = document.createElement("button");
-    button.textContent = localStorageArray[i];
-    button.setAttribute("class", "search-card");
-    pastCard.appendChild(button);
-  }
+
+const getLocalStorage = function() {
+    pastCard.innerHTML = "";
+    for (i = 0; i < localStorageArray.length; i++) {
+        const button = document.createElement("button");
+                button.textContent = localStorageArray[i];
+                button.setAttribute('class', 'search-card');
+                pastCard.appendChild(button);
+    };
 };
 
 // === Event Listener Section ====  //
