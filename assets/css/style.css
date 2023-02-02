@@ -107,6 +107,12 @@ aside {
   height: 400px;
 }
 
+@media (max-width: 768px) {
+  .past-aside {
+    margin-bottom: 15px;
+  }
+}
+
 #wiki-link {
   padding-top: 20px;
   font-weight: bolder;
@@ -151,5 +157,4 @@ aside {
   .footer {
     flex-direction: column;
   }
-
 }
