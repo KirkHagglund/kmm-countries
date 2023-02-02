@@ -65,7 +65,7 @@ const restUrl = function (countryName) {
         .then((data) => {
             console.log(data[0]);
             console.log(data[0].capital[0]);
-            console.log(data[0].flags.png); //not working - cant translate the photo file over
+            console.log(data[0].flags.png);
             console.log(data[0].continents[0]);
             console.log(Object.keys(data[0].currencies)[0]);
             console.log(data[0].currencies[Object.keys(data[0].currencies)].name);
@@ -73,7 +73,7 @@ const restUrl = function (countryName) {
 
 
             let countryCapital = document.createElement('h4');
-            let countryFlags = document.createElement('img'); //not working
+            let countryFlags = document.createElement('img');
             let countryContinent = document.createElement('h4');
             let countryPopulation = document.createElement('h4');
             let countryCurrency = document.createElement('h4');
@@ -90,7 +90,6 @@ const restUrl = function (countryName) {
 
             resultDiv.appendChild(countryCapital);
             resultDiv.appendChild(countryFlags);
-            //resultDiv.appendChild(countryFlagsB);
             countryFlags.style.border = "2px solid black";
             resultDiv.appendChild(countryContinent);
             resultDiv.appendChild(countryPopulation);
