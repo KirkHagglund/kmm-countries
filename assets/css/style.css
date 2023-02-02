@@ -5,7 +5,7 @@ body {
 
 /**styling the header**/
 
-.navbar-item {
+.navspan {
   color: white;
   font-family: sans-serif;
   font-size: 18px;
@@ -107,12 +107,6 @@ aside {
   height: 400px;
 }
 
-@media (max-width: 768px) {
-  .past-aside {
-    margin-bottom: 15px;
-  }
-}
-
 #wiki-link {
   padding-top: 20px;
   font-weight: bolder;
@@ -157,8 +151,30 @@ aside {
   color: white;
 }
 
-@media (max-width: 768px) {
-  .footer {
-    flex-direction: column;
+@media screen and (max-width: 768px) {
+  #past-aside {
+    position: relative;
+    bottom: 0;
+    z-index: 3;
   }
+  .footer {
+    position: relative;
+    bottom: -400px;
+    height: fit-content; 
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px; 
+  }
+  #subtitle {
+    display: none;
+  }
+  #map {
+    width: 90%;
+    margin: auto;
+  }
+  #result-card {
+    width: 90%;
+    margin: auto;
+  }
+
 }
