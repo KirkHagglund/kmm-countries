@@ -146,3 +146,10 @@ aside {
   justify-content: flex-start;
   align-items: center;
 }
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+  }
+
+}
