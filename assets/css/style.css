@@ -107,6 +107,12 @@ aside {
   height: 400px;
 }
 
+@media (max-width: 768px) {
+  .past-aside {
+    margin-bottom: 15px;
+  }
+}
+
 #wiki-link {
   padding-top: 20px;
   font-weight: bolder;
@@ -145,4 +151,10 @@ aside {
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+  }
 }
