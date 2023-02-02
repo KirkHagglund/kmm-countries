@@ -54,7 +54,7 @@ aside {
 }
 
 #subtitle {
-  border-bottom: 3px solid maroon;
+  border-bottom: 3px solid grey;
   height: 50px;
   width: 90%;
   margin: 10px auto;
@@ -157,21 +157,25 @@ aside {
     bottom: 0;
     z-index: 3;
   }
+
   .footer {
     position: relative;
     bottom: -400px;
-    height: fit-content; 
+    height: fit-content;
     display: flex;
     flex-direction: column;
-    margin-top: 100px; 
+    margin-top: 100px;
   }
+
   #subtitle {
     display: none;
   }
+
   #map {
     width: 90%;
     margin: auto;
   }
+
   #result-card {
     width: 90%;
     margin: auto;
