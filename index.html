@@ -45,17 +45,17 @@
       <div class="navbar-end">
         <div class="field is-grouped">
           <p class="control">
-            <a href="#" class="navbar-item">
+            <a href="#" class="navbar-item" id="refresh">
               <span>Home</span>
             </a>
           </p>
           <p class="control">
-            <a href="#" class="navbar-item">
+            <a href="#country-title" class="navbar-item">
               <span>Search</span>
             </a>
           </p>
           <p class="control">
-            <a href="#" class="navbar-item">
+            <a href="#footer-section" class="navbar-item">
               <span>About</span>
             </a>
           </p>
@@ -66,44 +66,56 @@
   <main>
     <!-- Search bar for fetch of country data-->
 
-    <section class="subtitle" id="subtitle">
+    <section id="subtitle">
       <h2 class="subheading subtitle has-text-centered">
-        A TL;DR Traveller's Database Right At Your Fingertips!
+        A TL;DR Traveller's Database At Your Fingertips!
       </h2>
     </section>
 
     <section class="columns">
       <aside class="column is-one-third" id="search-aside">
-        <p id="country-title">Search for the country:</p>
+        <h3 class="subtitle" id="country-title">Search for a Country of your Choice!</h3>
         <input type="text" id="country-inp" placeholder="Enter a country name here..." />
         <button id="search-btn">Search</button>
         <!--temp position for results display *move behind globe-->
-        <div id="result"></div>
       </aside>
       <div class="column is-two-thirds has-text-centered">
+        <div id="result-card">
+          <div id="result"></div>
+          <div id="wiki-link"></div>
         <!-- DIV for interactive map -->
-        <div id="map"></div>
-
+        </div>
+        <div id="map"></div>  
 
       </div>
     </section>
 
     <!--<section class="columns">-->
-    <div class="column is-one-third" id="past-aside">Past Search Section</div>
+    <div class="column is-one-third" id="past-aside">
+      <h3 class="subheader subtitle" id="past-search-header">Past Searches</h3>
+    </div>
     <!--</section>-->
   </main>
 
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <h2>Contact</h2>
-      <div class="contact-info">
-        <p>
-          <a class="footer-link" href="#">Tel: 647 452 9530</a>
-        </p>
-        <p>
-          <a class="footer-link" href="#">Email: kmm-countries@gmail.com</a>
-        </p>
-      </div>
+  <footer class="footer" id="footer-section">
+    <h3 class="footer-subhead">Created By</h3>
+    <div class="content has-text-centered footer-content">
+      <h4>Mariah</h4>
+      <p>Tel:</p>
+      <p>Email:</p>
+      <p>Twitter:</p>
+    </div>
+    <div class="content has-text-centered footer-content">
+      <h4>Moji</h4>
+      <p>Tel:</p>
+      <p>Email:</p>
+      <p>Twitter:</p>
+    </div>
+    <div class="content has-text-centered footer-content">
+      <h4>Kirk</h4>
+      <p>Tel:</p>
+      <p>Email:</p>
+      <p>Twitter:</p>
     </div>
   </footer>
   <script src="./assets/js/script.js"></script>

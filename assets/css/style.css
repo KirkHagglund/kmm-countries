@@ -14,10 +14,25 @@ body {
 .title {
   color: white;
   font-family: sans-serif;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
 }
 
 /**styling the main**/
+main {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  height: 700px;
+  width: 95%;
+}
+
 #map {
+  height: 600px;
+  width: 100%;
+}
+
+#result-card {
   height: 600px;
   width: 100%;
 }
@@ -35,17 +50,21 @@ aside {
 }
 
 .subheading {
-  padding: 10px;
+  padding: 5px;
 }
 
 #subtitle {
-  margin-bottom: 0px;
+  border-bottom: 3px solid maroon;
+  height: 50px;
+  width: 90%;
+  margin: 10px auto;
 }
 
 #search-aside {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 #country-title {
@@ -54,25 +73,76 @@ aside {
   text-align: center;
 }
 
+#country-inp {
+  height: 30px;
+  width: 75%;
+  border-radius: 5px;
+}
+
 #search-btn {
-  background-color: darkblue;
+  background-color: hsl(217, 71%, 53%);
   color: white;
   margin-top: 2%;
+  width: 75%;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 3px 3px 4px grey;
+  height: 30px;
+  font-size: 20px;
+  transform: translate(-1px, -1px);
+}
+
+#search-btn:active {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 3px grey;
 }
 
 #past-aside {
   position: relative;
-  bottom: 300px;
+  bottom: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 400px;
+}
+
+#wiki-link {
+  padding-top: 20px;
+  font-weight: bolder;
+}
+
+.search-card {
+  background-color: var(--banner);
+  color: var(--mainfont);
+  width: 75%;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 /**styling the footer**/
 .footer {
   width: 100%;
   padding: 2% 10%;
-  background-color: darkblue;
+  background-color: hsl(217, 71%, 53%);
   color: white;
+  margin-top: 0px;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-.footer-link {
-  color: white;
+.footer-subhead {
+  padding-top: 40px;
+  font-size: 1.5rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
 }
