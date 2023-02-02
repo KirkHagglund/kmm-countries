@@ -153,6 +153,10 @@ aside {
   align-items: center;
 }
 
+.footer-link {
+  color: white;
+}
+
 @media (max-width: 768px) {
   .footer {
     flex-direction: column;
