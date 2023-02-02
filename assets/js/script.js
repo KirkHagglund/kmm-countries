@@ -17,7 +17,7 @@ var submitRequest = function (event) {
     event.preventDefault();
     var countryInput = countryInp.value;
 
-     if (countryArray.includes(countryInput)) {
+    if (countryArray.includes(countryInput)) {
         getWikiLink(countryInput);
         restUrl(countryInput);
         resultDiv.textContent = "";
@@ -80,6 +80,7 @@ const restUrl = function (countryName) {
             let countryLanguage = document.createElement('h4');
 
 
+
             countryCapital.textContent = "Capital: " + data[0].capital[0];
             countryFlags.src = data[0].flags.png;
             countryContinent.textContent = "Continent: " + data[0].continents[0];
@@ -89,6 +90,8 @@ const restUrl = function (countryName) {
 
             resultDiv.appendChild(countryCapital);
             resultDiv.appendChild(countryFlags);
+            //resultDiv.appendChild(countryFlagsB);
+            countryFlags.style.border = "2px solid black";
             resultDiv.appendChild(countryContinent);
             resultDiv.appendChild(countryPopulation);
             resultDiv.appendChild(countryCurrency);
@@ -118,13 +121,13 @@ map.on('style.load', () => {
 
 // --- Adding Wiki LInk API fetch request --- //
 
-const getWikiLink = (countryName) => {   
+const getWikiLink = (countryName) => {
     const wikiUrl = 'https://en.wikipedia.org//w/api.php?action=opensearch&search=' + countryName + '&limit=1&format=json&origin=*';
     fetch(wikiUrl)
         .then(function (response) {
             if (response.ok) {
                 response.json()
-                    .then(function (data) {   
+                    .then(function (data) {
                         let wikiLink = document.createElement('a');
                         let wikiDisplay = document.createElement('p');
 
@@ -148,14 +151,14 @@ const getWikiLink = (countryName) => {
         });
 };
 
-const recallWikiLink = (country) => {   
+const recallWikiLink = (country) => {
     const wikiUrl = 'https://en.wikipedia.org//w/api.php?action=opensearch&search=' + country + '&limit=1&format=json&origin=*';
     fetch(wikiUrl)
         .then(function (response) {
             if (response.ok) {
                 response.json()
                     .then(function (data) {
-                        console.log(data[3] + 'recall')   
+                        console.log(data[3] + 'recall')
                         let wikiLink = document.createElement('a');
                         let wikiDisplay = document.createElement('p');
 
@@ -187,7 +190,7 @@ const recallRestUrl = function (country) {
 
 
             countryCapital.textContent = "Capital: " + data[0].capital[0];
-            countryFlags.src =data[0].flags.png;
+            countryFlags.src = data[0].flags.png;
             countryContinent.textContent = "Continent: " + data[0].continents[0];
             countryPopulation.textContent = "Population: " + JSON.stringify(data[0].population);
             countryCurrency.textContent = "Currencies: " + Object.keys(data[0].currencies)[0];
@@ -206,21 +209,22 @@ const recallRestUrl = function (country) {
 
 // --- Local Storage Section --- //
 
-const getLocalStorage = function() {
+const getLocalStorage = function () {
     for (i = 0; i < localStorageArray.length; i++) {
         const button = document.createElement("button");
-                button.textContent = localStorageArray[i];
-                button.setAttribute('class', 'search-card');
-                pastCard.appendChild(button);
+        button.textContent = localStorageArray[i];
+        button.setAttribute('class', 'search-card');
+        pastCard.appendChild(button);
     };
 };
+
 
 // === Event Listener Section ====  //
 
 searchBtn.addEventListener('click', submitRequest);
 homeBtn.addEventListener('click', pageRefresh);
 
-pastCard.addEventListener('click', function(event) {
+pastCard.addEventListener('click', function (event) {
     event.preventDefault();
     pastSearchRequest(event.target.textContent);
 });
