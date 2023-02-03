@@ -14,7 +14,7 @@ In order to access the information regarding a country that you would like to kn
 
 Wesbite URL: https://github.com/KirkHagglund/kmm-countries
 
-![Alt text](assets/Screen%20Shot%202023-02-01%20at%208.17.26%20PM.png)
+![Alt text](assets/Screen%20Shot%202023-02-03%20at%2010.31.56%20AM.png)
 
 ## Credits
 
